@@ -35,5 +35,5 @@ wget https://openresty.org/download/openresty-1.25.3.1.tar.gz
             
 make && make install
 
-/opt/woody/openresty/bin/opm  get ledgetech/lua-resty-http
+/opt/openresty/bin/opm  get ledgetech/lua-resty-http
 ```

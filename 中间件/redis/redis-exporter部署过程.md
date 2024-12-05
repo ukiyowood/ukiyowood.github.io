@@ -6,7 +6,7 @@
     
     1. redis_exporter和redis实例部署在一起1:1配备
         
-    2. 单独在运维主机节点上部署exporter，根据redis服务地址远程获取数据。一般用于测试环境下可以将exporter和prometheus监控节点放在一起 （像stage环境监控相关的都放在了主机`172.33.41.146`上了）
+    2. 单独在运维主机节点上部署exporter，根据redis服务地址远程获取数据。
         
 3. 通过docker compose启动redis_exporter节点
     
@@ -21,8 +21,8 @@
         ports:
           - "9121:9121"
         environment:
-          - REDIS_ADDR=172.33.21.104:7001
-          - REDIS_PASSWORD=dingXiang123
+          - REDIS_ADDR=127.0.0.1:7001
+          - REDIS_PASSWORD=1234
       redis_exporter-9122:
         image: oliver006/redis_exporter
         container_name: redis_exporter-9122
@@ -30,8 +30,8 @@
         ports:
           - "9122:9121"
         environment:
-          - REDIS_ADDR=172.33.21.104:7002
-          - REDIS_PASSWORD=dingXiang123
+          - REDIS_ADDR=127.0.0.1:7002
+          - REDIS_PASSWORD=1234
       redis_exporter-9123:
         image: oliver006/redis_exporter
         container_name: redis_exporter-9123
@@ -39,8 +39,8 @@
         ports:
           - "9123:9121"
         environment:
-          - REDIS_ADDR=172.33.21.104:7003
-          - REDIS_PASSWORD=dingXiang123
+          - REDIS_ADDR=127.0.0.1:7003
+          - REDIS_PASSWORD=1234
     networks:
       default:
         external:
