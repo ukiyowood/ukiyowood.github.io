@@ -10,9 +10,45 @@
   <div id="app">loading...</div>
   <script>
     window.$docsify = {
-        loadSidebar: true
+        logo: '/_pic/logo.svg',
+        name: '开水加冰',
+        loadSidebar: true,
+        loadNavbar: true,
+        // maxLevel: 5,
+        subMaxLevel: 6,
+        repo: 'ukiyowood/ukiyowood.github.io',
+        auto2top: true,
+        relativePath: true,
+        themeColor: '#444DDD',
+        autoHeader: true,
+        mergeNavbar: true,
+        topMargin: 90, 
+        alias: {
+        '/.*/_sidebar.md': '/_sidebar.md'
+        },
+        search: {
+            maxAge: 86400000,// 过期时间，单位毫秒，默认一天
+            paths: 'auto',// 注意：仅适用于 paths: 'auto' 模式
+            placeholder: '搜索',              
+            // 支持本地化
+            placeholder: {
+                '/zh-cn/': '搜索',
+                '/': 'Type to search'
+            },
+            noData: '找不到结果',
+            depth: 4,
+            hideOtherSidebarContent: false,
+            namespace: '/',
+        }
+        // hideSidebar: true,
+
     }
   </script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
 </body>
 </html>
